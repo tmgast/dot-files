@@ -2,6 +2,8 @@ source ~/terminal_settings/.colors
 source ~/terminal_settings/.ps_settings
 source ~/terminal_settings/.logs
 
+alias reload="source ~/.bash_profile"
+
 # History
 export HISTIGNORE="h:history:pwd:exit:df:ls:ls -la:ll"
 export HISTCONTROL="ignoreboth:erasedups"
@@ -17,15 +19,19 @@ alias egrep="egrep --color=auto"
 alias mem="free -m"
 alias a2l="sudo service apache2 reload"
 alias a2r="sudo service apache2 restart"
+alias chweb="sudo chgrp -R www-data"
+alias chrx="sudo chmod -R 775"
+
+#- backup file
 bu() { cp $@ $@.backup-`date +%y%m%d`; echo "`date +%Y-%m-%d` backed up $PWD/$@" >> ~/.backups.log; }
-alias chweb="sudo chgrp -R www-data "
-alias chrx="sudo chmod -R 775 "
 
 #-- Navigation
-alias home="cd ~"
 alias up="cd ../"
-alias web="cd ~/nexus"
-alias n="cd ~/nexus"
+alias upp="cd ../../"
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
 alias ll="ls -lahG"
 alias h="history"
 alias last="history 10"
@@ -49,24 +55,24 @@ alias vssh="vagrant ssh"
 alias vc="vagrant ssh"
 
 #-- Git
-alias gs="git status "
-alias ga="git add "
-alias gb="git branch "
-alias gc="git commit "
+alias gs="git status"
+alias ga="git add"
+alias gb="git branch"
+alias gc="git commit"
 alias gd="git diff"
-alias go="git checkout "
-alias gf="git fetch "
-alias gl="git log "
+alias go="git checkout"
+alias gf="git fetch"
+alias gl="git log"
 
 #-- Composer
 alias cda="composer dump-autoload -o"
-alias cu="composer update "
-alias ci="composer install "
+alias cu="composer update"
+alias ci="composer install"
 alias cs="sudo composer self-update"
 
 #-- Laravel
 alias art="php artisan"
-alias a:m="php artisan migrate "
+alias a:m="php artisan migrate"
 alias a:r="php artisan migrate:rollback"
 
 #-- Doctrine
